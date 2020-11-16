@@ -150,60 +150,262 @@
       
         <h3 id="心血来潮"><a href="#心血来潮" class="headerlink" title="心血来潮"></a>心血来潮</h3><p>刷题的时候碰到一道CSS选择器的题目，发现自己有点忘记了，写一篇博客，加深一下记忆！</p>
 <ol>
-<li>通配符选择器（*） <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">选择所有元素</span><br><span class="line"></span><br><span class="line">这个不需要多说什么</span><br></pre></td></tr></table></figure></li>
-<li>id选择器 、 类名选择器 、 元素选择器 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">顾名思义，就是分别选择对应的id <span class="class"><span class="keyword">class</span> 和标签元素的</span></span><br><span class="line"><span class="class"></span></span><br><span class="line"><span class="class">拓展：选择器是有权重的</span></span><br><span class="line"><span class="class"></span></span><br><span class="line"><span class="class">内联样式的权重为：      1，0，0，0</span></span><br><span class="line"><span class="class"><span class="title">id</span>选择器的权重为：      0，1，0，0</span></span><br><span class="line"><span class="class"><span class="title">class</span>选择器的权重为：   0，0，1，0</span></span><br><span class="line"><span class="class"><span class="title">element</span>选择器的权重为： 0，0，0，1 </span></span><br><span class="line">tips: 继承的样式权重为0 !improt权重为无限大</span><br></pre></td></tr></table></figure></li>
-<li>稍微复杂点的选择器（不知道怎么分类。。。）</li>
+<li><p>通配符选择器（*）</p>
+ <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">选择所有元素</span><br><span class="line"></span><br><span class="line">这个不需要多说什么</span><br></pre></td></tr></table></figure></li>
+<li><p>id选择器 、 类名选择器 、 元素选择器</p>
+ <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">顾名思义，就是分别选择对应的id <span class="class"><span class="keyword">class</span> 和标签元素的</span></span><br><span class="line"><span class="class"></span></span><br><span class="line"><span class="class">拓展：选择器是有权重的</span></span><br><span class="line"><span class="class"></span></span><br><span class="line"><span class="class">内联样式的权重为：      1，0，0，0</span></span><br><span class="line"><span class="class"><span class="title">id</span>选择器的权重为：      0，1，0，0</span></span><br><span class="line"><span class="class"><span class="title">class</span>选择器的权重为：   0，0，1，0</span></span><br><span class="line"><span class="class"><span class="title">element</span>选择器的权重为： 0，0，0，1 </span></span><br><span class="line">tips: 继承的样式权重为0 !improt权重为无限大</span><br></pre></td></tr></table></figure></li>
+<li><p>稍微复杂点的选择器（不知道怎么分类。。。）</p>
+<table>
+<thead>
+<tr>
+<th align="left">语法</th>
+<th align="left">例子</th>
+<th align="left">解释</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">element,element</td>
+<td align="left">div,p</td>
+<td align="left">选择所有 div 元素和 p 元素</td>
+</tr>
+<tr>
+<td align="left">element element</td>
+<td align="left">div p</td>
+<td align="left">选择 div元素内的所有 p元素</td>
+</tr>
+<tr>
+<td align="left">element&gt;element</td>
+<td align="left">div&gt;p</td>
+<td align="left">选择所有父级是 div 元素的 p 元素</td>
+</tr>
+<tr>
+<td align="left">element+element</td>
+<td align="left">div+p</td>
+<td align="left">选择所有紧接着 div 元素之后的 p 元素</td>
+</tr>
+<tr>
+<td align="left">[attribute]</td>
+<td align="left">[target]</td>
+<td align="left">选择所有带有target属性元素</td>
+</tr>
+<tr>
+<td align="left">[attribute=value]</td>
+<td align="left">[target=-blank]</td>
+<td align="left">选择所有使用target=”-blank”的元素</td>
+</tr>
+<tr>
+<td align="left">[attribute~=value]</td>
+<td align="left">[title~=flower]</td>
+<td align="left">选择标题属性包含单词”flower”的所有元素</td>
+</tr>
+<tr>
+<td align="left">[attribute  =language]</td>
+<td align="left">[lang]</td>
+<td align="left">lang 属性以 en 为开头的所有元素</td>
+</tr>
+<tr>
+<td align="left">:link</td>
+<td align="left">a:link</td>
+<td align="left">选择所有未访问链接</td>
+</tr>
+<tr>
+<td align="left">:visited</td>
+<td align="left">a:visited</td>
+<td align="left">选择所有访问过的链接</td>
+</tr>
+<tr>
+<td align="left">:active</td>
+<td align="left">a:active</td>
+<td align="left">选择活动链接</td>
+</tr>
+<tr>
+<td align="left">:hover</td>
+<td align="left">a:hover</td>
+<td align="left">选择鼠标在链接上面时</td>
+</tr>
+<tr>
+<td align="left">:focus</td>
+<td align="left">input:focus</td>
+<td align="left">选择具有焦点的输入元素</td>
+</tr>
+<tr>
+<td align="left">:first-letter</td>
+<td align="left">p:first-letter</td>
+<td align="left">选择每一个 p 元素的第一个字母</td>
+</tr>
+<tr>
+<td align="left">:first-line</td>
+<td align="left">p:first-line</td>
+<td align="left">选择每一个 p 元素的第一行</td>
+</tr>
+<tr>
+<td align="left">:first-child</td>
+<td align="left">p:first-child</td>
+<td align="left">指定只有当 p 元素是其父级的第一个子级的样式。</td>
+</tr>
+<tr>
+<td align="left">:before</td>
+<td align="left">p:before</td>
+<td align="left">在每个 p 元素之前插入内容</td>
+</tr>
+<tr>
+<td align="left">:after</td>
+<td align="left">p:after</td>
+<td align="left">在每个 p 元素之后插入内容</td>
+</tr>
+<tr>
+<td align="left">:lang(language)</td>
+<td align="left">p:lang(it)</td>
+<td align="left">选择一个lang属性的起始值=”it”的所有 p 元素</td>
+</tr>
+<tr>
+<td align="left">element1~element2</td>
+<td align="left">p~ul</td>
+<td align="left">选择p元素之后的每一个ul元素</td>
+</tr>
+<tr>
+<td align="left">[attribute^=value]</td>
+<td align="left">a[src^=”https”]</td>
+<td align="left">选择每一个src属性的值以”https”开头的元素</td>
+</tr>
+<tr>
+<td align="left">[attribute$=value]</td>
+<td align="left">a[src$=”.pdf”]</td>
+<td align="left">选择每一个src属性的值以”.pdf”结尾的元素</td>
+</tr>
+<tr>
+<td align="left">[attribute*=value]</td>
+<td align="left">a[src*=”runoob”]</td>
+<td align="left">选择每一个src属性的值包含子字符串”runoob”的元素</td>
+</tr>
+<tr>
+<td align="left">:first-of-type</td>
+<td align="left">p:first-of-type</td>
+<td align="left">选择每个p元素是其父级的第一个p元素</td>
+</tr>
+<tr>
+<td align="left">:last-of-type</td>
+<td align="left">p:last-of-type</td>
+<td align="left">选择每个p元素是其父级的最后一个p元素</td>
+</tr>
+<tr>
+<td align="left">:only-of-type</td>
+<td align="left">p:only-of-type</td>
+<td align="left">选择每个p元素是其父级的唯一p元素</td>
+</tr>
+<tr>
+<td align="left">:only-child</td>
+<td align="left">p:only-child</td>
+<td align="left">选择每个p元素是其父级的唯一子元素</td>
+</tr>
+<tr>
+<td align="left">:nth-child(n)</td>
+<td align="left">p:nth-child(2)</td>
+<td align="left">选择每个p元素是其父级的第二个子元素</td>
+</tr>
+<tr>
+<td align="left">:nth-last-child(n)</td>
+<td align="left">p:nth-last-child(2)</td>
+<td align="left">选择每个p元素的是其父级的第二个子元素，从最后一个子项计数</td>
+</tr>
+<tr>
+<td align="left">:nth-of-type(n)</td>
+<td align="left">p:nth-of-type(2)</td>
+<td align="left">选择每个p元素是其父级的第二个p元素</td>
+</tr>
+<tr>
+<td align="left">:nth-last-of-type(n)</td>
+<td align="left">p:nth-last-of-type(2)</td>
+<td align="left">选择每个p元素的是其父级的第二个p元素，从最后一个子项计数</td>
+</tr>
+<tr>
+<td align="left">:last-child</td>
+<td align="left">p:last-child</td>
+<td align="left">选择每个p元素是其父级的最后一个子级。</td>
+</tr>
+<tr>
+<td align="left">:root</td>
+<td align="left">:root</td>
+<td align="left">选择文档的根元素</td>
+</tr>
+<tr>
+<td align="left">:empty</td>
+<td align="left">p:empty</td>
+<td align="left">选择每个没有任何子级的p元素（包括文本节点）</td>
+</tr>
+<tr>
+<td align="left">:target</td>
+<td align="left">#news:target</td>
+<td align="left">选择当前活动的#news元素（包含该锚名称的点击的URL）</td>
+</tr>
+<tr>
+<td align="left">:enabled</td>
+<td align="left">input:enabled</td>
+<td align="left">选择每一个已启用的输入元素</td>
+</tr>
+<tr>
+<td align="left">:disabled</td>
+<td align="left">input:disabled</td>
+<td align="left">选择每一个禁用的输入元素</td>
+</tr>
+<tr>
+<td align="left">:checked</td>
+<td align="left">input:checked</td>
+<td align="left">选择每个选中的输入元素</td>
+</tr>
+<tr>
+<td align="left">:not(selector)</td>
+<td align="left">:not(p)</td>
+<td align="left">选择每个并非p元素的元素</td>
+</tr>
+<tr>
+<td align="left">::selection</td>
+<td align="left">::selection</td>
+<td align="left">匹配元素中被用户选中或处于高亮状态的部分</td>
+</tr>
+<tr>
+<td align="left">:out-of-range</td>
+<td align="left">:out-of-range</td>
+<td align="left">匹配值在指定区间之外的input元素</td>
+</tr>
+<tr>
+<td align="left">:in-range</td>
+<td align="left">:in-range</td>
+<td align="left">匹配值在指定区间之内的input元素</td>
+</tr>
+<tr>
+<td align="left">:read-write</td>
+<td align="left">:read-write</td>
+<td align="left">用于匹配可读及可写的元素</td>
+</tr>
+<tr>
+<td align="left">:read-only</td>
+<td align="left">:read-only</td>
+<td align="left">用于匹配设置 “readonly”（只读） 属性的元素</td>
+</tr>
+<tr>
+<td align="left">:optional</td>
+<td align="left">:optional</td>
+<td align="left">用于匹配可选的输入元素</td>
+</tr>
+<tr>
+<td align="left">:required</td>
+<td align="left">:required</td>
+<td align="left">用于匹配设置了 “required” 属性的元素</td>
+</tr>
+<tr>
+<td align="left">:valid</td>
+<td align="left">:valid</td>
+<td align="left">用于匹配输入值为合法的元素</td>
+</tr>
+<tr>
+<td align="left">:invalid</td>
+<td align="left">:invalid</td>
+<td align="left">用于匹配输入值为非法的元素</td>
+</tr>
+</tbody></table>
+</li>
 </ol>
-<pre><code>| 语法                 | 例子                  | 解释                                                      |
-| :------------------- | :-------------------- | :-------------------------------------------------------- |
-| element,element      | div,p                 | 选择所有&lt;div&gt;元素和&lt;p&gt;元素                                |
-| element element      | div p                 | 选择&lt;div&gt;元素内的所有&lt;p&gt;元素                              |
-| element&gt;element      | div&gt;p                 | 选择所有父级是 &lt;div&gt; 元素的 &lt;p&gt; 元素                      |
-| element+element      | div+p                 | 选择所有紧接着&lt;div&gt;元素之后的&lt;p&gt;元素                      |
-| [attribute]          | [target]              | 选择所有带有target属性元素                                |
-| [attribute=value]    | [target=-blank]       | 选择所有使用target=&quot;-blank&quot;的元素                         |
-| [attribute~=value]   | [title~=flower]       | 选择标题属性包含单词&quot;flower&quot;的所有元素                    |
-| [attribute           | =language]            | [lang]     lang 属性以 en 为开头的所有元素                |
-| :link                | a:link                | 选择所有未访问链接                                        |
-| :visited             | a:visited             | 选择所有访问过的链接                                      |
-| :active              | a:active              | 选择活动链接                                              |
-| :hover               | a:hover               | 选择鼠标在链接上面时                                      |
-| :focus               | input:focus           | 选择具有焦点的输入元素                                    |
-| :first-letter        | p:first-letter        | 选择每一个&lt;p&gt;元素的第一个字母                             |
-| :first-line          | p:first-line          | 选择每一个&lt;p&gt;元素的第一行                                 |
-| :first-child         | p:first-child         | 指定只有当&lt;p&gt;元素是其父级的第一个子级的样式。             |
-| :before              | p:before              | 在每个&lt;p&gt;元素之前插入内容                                 |
-| :after               | p:after               | 在每个&lt;p&gt;元素之后插入内容                                 |
-| :lang(language)      | p:lang(it)            | 选择一个lang属性的起始值=&quot;it&quot;的所有&lt;p&gt;元素                |
-| element1~element2    | p~ul                  | 选择p元素之后的每一个ul元素                               |
-| [attribute^=value]   | a[src^=&quot;https&quot;]       | 选择每一个src属性的值以&quot;https&quot;开头的元素                  |
-| [attribute$=value]   | a[src$=&quot;.pdf&quot;]        | 选择每一个src属性的值以&quot;.pdf&quot;结尾的元素                   |
-| [attribute*=value]   | a[src*=&quot;runoob&quot;]      | 选择每一个src属性的值包含子字符串&quot;runoob&quot;的元素           |
-| :first-of-type       | p:first-of-type       | 选择每个p元素是其父级的第一个p元素                        |
-| :last-of-type        | p:last-of-type        | 选择每个p元素是其父级的最后一个p元素                      |
-| :only-of-type        | p:only-of-type        | 选择每个p元素是其父级的唯一p元素                          |
-| :only-child          | p:only-child          | 选择每个p元素是其父级的唯一子元素                         |
-| :nth-child(n)        | p:nth-child(2)        | 选择每个p元素是其父级的第二个子元素                       |
-| :nth-last-child(n)   | p:nth-last-child(2)   | 选择每个p元素的是其父级的第二个子元素，从最后一个子项计数 |
-| :nth-of-type(n)      | p:nth-of-type(2)      | 选择每个p元素是其父级的第二个p元素                        |
-| :nth-last-of-type(n) | p:nth-last-of-type(2) | 选择每个p元素的是其父级的第二个p元素，从最后一个子项计数  |
-| :last-child          | p:last-child          | 选择每个p元素是其父级的最后一个子级。                     |
-| :root                | :root                 | 选择文档的根元素                                          |
-| :empty               | p:empty               | 选择每个没有任何子级的p元素（包括文本节点）               |
-| :target              | #news:target          | 选择当前活动的#news元素（包含该锚名称的点击的URL）        |
-| :enabled             | input:enabled         | 选择每一个已启用的输入元素                                |
-| :disabled            | input:disabled        | 选择每一个禁用的输入元素                                  |
-| :checked             | input:checked         | 选择每个选中的输入元素                                    |
-| :not(selector)       | :not(p)               | 选择每个并非p元素的元素                                   |
-| ::selection          | ::selection           | 匹配元素中被用户选中或处于高亮状态的部分                  |
-| :out-of-range        | :out-of-range         | 匹配值在指定区间之外的input元素                           |
-| :in-range            | :in-range             | 匹配值在指定区间之内的input元素                           |
-| :read-write          | :read-write           | 用于匹配可读及可写的元素                                  |
-| :read-only           | :read-only            | 用于匹配设置 &quot;readonly&quot;（只读） 属性的元素                |
-| :optional            | :optional             | 用于匹配可选的输入元素                                    |
-| :required            | :required             | 用于匹配设置了 &quot;required&quot; 属性的元素                      |
-| :valid               | :valid                | 用于匹配输入值为合法的元素                                |
-| :invalid             | :invalid              | 用于匹配输入值为非法的元素                                |</code></pre>
 
       
 
