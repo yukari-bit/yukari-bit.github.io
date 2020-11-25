@@ -6,13 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>范洪鑫的个人博客</title>
+  <title>二叉树的遍历（先序、中序和后序） | 范洪鑫的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="范洪鑫的个人博客">
-<meta property="og:url" content="http://example.com/index.html">
+  <meta name="description" content="开篇最近在学习数据结构，学到二叉树，发现这个地方还是挺有趣的，也有点绕，记录一下 二叉树二叉树（Binary tree）是树形结构的一个重要类型。许多实际问题抽象出来的数据结构往往是二叉树形式，即使是一般的树也能简单地转换为二叉树，而且二叉树的存储结构及其算法都较为简单，因此二叉树显得特别重要。二叉树特点是每个结点最多只能有两棵子树，且有左右之分 二叉树是n个有限元素的集合，该集合或者为空、或者由">
+<meta property="og:type" content="article">
+<meta property="og:title" content="二叉树的遍历（先序、中序和后序）">
+<meta property="og:url" content="http://example.com/2020/11/25/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E9%81%8D%E5%8E%86%EF%BC%88%E5%85%88%E5%BA%8F%E3%80%81%E4%B8%AD%E5%BA%8F%E5%92%8C%E5%90%8E%E5%BA%8F%EF%BC%89/index.html">
 <meta property="og:site_name" content="范洪鑫的个人博客">
+<meta property="og:description" content="开篇最近在学习数据结构，学到二叉树，发现这个地方还是挺有趣的，也有点绕，记录一下 二叉树二叉树（Binary tree）是树形结构的一个重要类型。许多实际问题抽象出来的数据结构往往是二叉树形式，即使是一般的树也能简单地转换为二叉树，而且二叉树的存储结构及其算法都较为简单，因此二叉树显得特别重要。二叉树特点是每个结点最多只能有两棵子树，且有左右之分 二叉树是n个有限元素的集合，该集合或者为空、或者由">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-11-25T08:22:20.000Z">
+<meta property="article:modified_time" content="2020-11-25T08:57:53.080Z">
 <meta property="article:author" content="HonXin">
 <meta name="twitter:card" content="summary">
   
@@ -126,16 +130,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-二叉树的遍历（先序、中序和后序）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-二叉树的遍历（先序、中序和后序）" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/11/25/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E9%81%8D%E5%8E%86%EF%BC%88%E5%85%88%E5%BA%8F%E3%80%81%E4%B8%AD%E5%BA%8F%E5%92%8C%E5%90%8E%E5%BA%8F%EF%BC%89/">二叉树的遍历（先序、中序和后序）</a>
+    <h1 class="article-title" itemprop="name">
+      二叉树的遍历（先序、中序和后序）
     </h1>
   
 
@@ -174,16 +176,75 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/11/25/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E9%81%8D%E5%8E%86%EF%BC%88%E5%85%88%E5%BA%8F%E3%80%81%E4%B8%AD%E5%BA%8F%E5%92%8C%E5%90%8E%E5%BA%8F%EF%BC%89/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2020/11/25/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E9%81%8D%E5%8E%86%EF%BC%88%E5%85%88%E5%BA%8F%E3%80%81%E4%B8%AD%E5%BA%8F%E5%92%8C%E5%90%8E%E5%BA%8F%EF%BC%89/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2020/11/16/CSS-css%E9%80%89%E6%8B%A9%E5%99%A8/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">CSS-css选择器</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -203,465 +264,14 @@
 
 
 
-
   
-    <article id="post-CSS-css选择器" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/11/16/CSS-css%E9%80%89%E6%8B%A9%E5%99%A8/">CSS-css选择器</a>
-    </h1>
   
 
-        
-        <a href="/2020/11/16/CSS-css%E9%80%89%E6%8B%A9%E5%99%A8/" class="archive-article-date">
-  	<time datetime="2020-11-16T08:24:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-11-16</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="心血来潮"><a href="#心血来潮" class="headerlink" title="心血来潮"></a>心血来潮</h3><p>刷题的时候碰到一道CSS选择器的题目，发现自己有点忘记了，写一篇博客，加深一下记忆！</p>
-<ol>
-<li><p>通配符选择器（*）</p>
- <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">选择所有元素</span><br><span class="line"></span><br><span class="line">这个不需要多说什么</span><br></pre></td></tr></table></figure></li>
-<li><p>id选择器 、 类名选择器 、 元素选择器</p>
- <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">顾名思义，就是分别选择对应的id <span class="class"><span class="keyword">class</span> 和标签元素的</span></span><br><span class="line"><span class="class"></span></span><br><span class="line"><span class="class">拓展：选择器是有权重的</span></span><br><span class="line"><span class="class"></span></span><br><span class="line"><span class="class">内联样式的权重为：      1，0，0，0</span></span><br><span class="line"><span class="class"><span class="title">id</span>选择器的权重为：      0，1，0，0</span></span><br><span class="line"><span class="class"><span class="title">class</span>选择器的权重为：   0，0，1，0</span></span><br><span class="line"><span class="class"><span class="title">element</span>选择器的权重为： 0，0，0，1 </span></span><br><span class="line">tips: 继承的样式权重为0 !improt权重为无限大</span><br></pre></td></tr></table></figure></li>
-<li><p>稍微复杂点的选择器（不知道怎么分类。。。）</p>
-<table>
-<thead>
-<tr>
-<th align="left">语法</th>
-<th align="left">例子</th>
-<th align="left">解释</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">element,element</td>
-<td align="left">div,p</td>
-<td align="left">选择所有 div 元素和 p 元素</td>
-</tr>
-<tr>
-<td align="left">element element</td>
-<td align="left">div p</td>
-<td align="left">选择 div元素内的所有 p元素</td>
-</tr>
-<tr>
-<td align="left">element&gt;element</td>
-<td align="left">div&gt;p</td>
-<td align="left">选择所有父级是 div 元素的 p 元素</td>
-</tr>
-<tr>
-<td align="left">element+element</td>
-<td align="left">div+p</td>
-<td align="left">选择所有紧接着 div 元素之后的 p 元素</td>
-</tr>
-<tr>
-<td align="left">[attribute]</td>
-<td align="left">[target]</td>
-<td align="left">选择所有带有target属性元素</td>
-</tr>
-<tr>
-<td align="left">[attribute=value]</td>
-<td align="left">[target=-blank]</td>
-<td align="left">选择所有使用target=”-blank”的元素</td>
-</tr>
-<tr>
-<td align="left">[attribute~=value]</td>
-<td align="left">[title~=flower]</td>
-<td align="left">选择标题属性包含单词”flower”的所有元素</td>
-</tr>
-<tr>
-<td align="left">[attribute  =language]</td>
-<td align="left">[lang]</td>
-<td align="left">lang 属性以 en 为开头的所有元素</td>
-</tr>
-<tr>
-<td align="left">:link</td>
-<td align="left">a:link</td>
-<td align="left">选择所有未访问链接</td>
-</tr>
-<tr>
-<td align="left">:visited</td>
-<td align="left">a:visited</td>
-<td align="left">选择所有访问过的链接</td>
-</tr>
-<tr>
-<td align="left">:active</td>
-<td align="left">a:active</td>
-<td align="left">选择活动链接</td>
-</tr>
-<tr>
-<td align="left">:hover</td>
-<td align="left">a:hover</td>
-<td align="left">选择鼠标在链接上面时</td>
-</tr>
-<tr>
-<td align="left">:focus</td>
-<td align="left">input:focus</td>
-<td align="left">选择具有焦点的输入元素</td>
-</tr>
-<tr>
-<td align="left">:first-letter</td>
-<td align="left">p:first-letter</td>
-<td align="left">选择每一个 p 元素的第一个字母</td>
-</tr>
-<tr>
-<td align="left">:first-line</td>
-<td align="left">p:first-line</td>
-<td align="left">选择每一个 p 元素的第一行</td>
-</tr>
-<tr>
-<td align="left">:first-child</td>
-<td align="left">p:first-child</td>
-<td align="left">指定只有当 p 元素是其父级的第一个子级的样式。</td>
-</tr>
-<tr>
-<td align="left">:before</td>
-<td align="left">p:before</td>
-<td align="left">在每个 p 元素之前插入内容</td>
-</tr>
-<tr>
-<td align="left">:after</td>
-<td align="left">p:after</td>
-<td align="left">在每个 p 元素之后插入内容</td>
-</tr>
-<tr>
-<td align="left">:lang(language)</td>
-<td align="left">p:lang(it)</td>
-<td align="left">选择一个lang属性的起始值=”it”的所有 p 元素</td>
-</tr>
-<tr>
-<td align="left">element1~element2</td>
-<td align="left">p~ul</td>
-<td align="left">选择p元素之后的每一个ul元素</td>
-</tr>
-<tr>
-<td align="left">[attribute^=value]</td>
-<td align="left">a[src^=”https”]</td>
-<td align="left">选择每一个src属性的值以”https”开头的元素</td>
-</tr>
-<tr>
-<td align="left">[attribute$=value]</td>
-<td align="left">a[src$=”.pdf”]</td>
-<td align="left">选择每一个src属性的值以”.pdf”结尾的元素</td>
-</tr>
-<tr>
-<td align="left">[attribute*=value]</td>
-<td align="left">a[src*=”runoob”]</td>
-<td align="left">选择每一个src属性的值包含子字符串”runoob”的元素</td>
-</tr>
-<tr>
-<td align="left">:first-of-type</td>
-<td align="left">p:first-of-type</td>
-<td align="left">选择每个p元素是其父级的第一个p元素</td>
-</tr>
-<tr>
-<td align="left">:last-of-type</td>
-<td align="left">p:last-of-type</td>
-<td align="left">选择每个p元素是其父级的最后一个p元素</td>
-</tr>
-<tr>
-<td align="left">:only-of-type</td>
-<td align="left">p:only-of-type</td>
-<td align="left">选择每个p元素是其父级的唯一p元素</td>
-</tr>
-<tr>
-<td align="left">:only-child</td>
-<td align="left">p:only-child</td>
-<td align="left">选择每个p元素是其父级的唯一子元素</td>
-</tr>
-<tr>
-<td align="left">:nth-child(n)</td>
-<td align="left">p:nth-child(2)</td>
-<td align="left">选择每个p元素是其父级的第二个子元素</td>
-</tr>
-<tr>
-<td align="left">:nth-last-child(n)</td>
-<td align="left">p:nth-last-child(2)</td>
-<td align="left">选择每个p元素的是其父级的第二个子元素，从最后一个子项计数</td>
-</tr>
-<tr>
-<td align="left">:nth-of-type(n)</td>
-<td align="left">p:nth-of-type(2)</td>
-<td align="left">选择每个p元素是其父级的第二个p元素</td>
-</tr>
-<tr>
-<td align="left">:nth-last-of-type(n)</td>
-<td align="left">p:nth-last-of-type(2)</td>
-<td align="left">选择每个p元素的是其父级的第二个p元素，从最后一个子项计数</td>
-</tr>
-<tr>
-<td align="left">:last-child</td>
-<td align="left">p:last-child</td>
-<td align="left">选择每个p元素是其父级的最后一个子级。</td>
-</tr>
-<tr>
-<td align="left">:root</td>
-<td align="left">:root</td>
-<td align="left">选择文档的根元素</td>
-</tr>
-<tr>
-<td align="left">:empty</td>
-<td align="left">p:empty</td>
-<td align="left">选择每个没有任何子级的p元素（包括文本节点）</td>
-</tr>
-<tr>
-<td align="left">:target</td>
-<td align="left">#news:target</td>
-<td align="left">选择当前活动的#news元素（包含该锚名称的点击的URL）</td>
-</tr>
-<tr>
-<td align="left">:enabled</td>
-<td align="left">input:enabled</td>
-<td align="left">选择每一个已启用的输入元素</td>
-</tr>
-<tr>
-<td align="left">:disabled</td>
-<td align="left">input:disabled</td>
-<td align="left">选择每一个禁用的输入元素</td>
-</tr>
-<tr>
-<td align="left">:checked</td>
-<td align="left">input:checked</td>
-<td align="left">选择每个选中的输入元素</td>
-</tr>
-<tr>
-<td align="left">:not(selector)</td>
-<td align="left">:not(p)</td>
-<td align="left">选择每个并非p元素的元素</td>
-</tr>
-<tr>
-<td align="left">::selection</td>
-<td align="left">::selection</td>
-<td align="left">匹配元素中被用户选中或处于高亮状态的部分</td>
-</tr>
-<tr>
-<td align="left">:out-of-range</td>
-<td align="left">:out-of-range</td>
-<td align="left">匹配值在指定区间之外的input元素</td>
-</tr>
-<tr>
-<td align="left">:in-range</td>
-<td align="left">:in-range</td>
-<td align="left">匹配值在指定区间之内的input元素</td>
-</tr>
-<tr>
-<td align="left">:read-write</td>
-<td align="left">:read-write</td>
-<td align="left">用于匹配可读及可写的元素</td>
-</tr>
-<tr>
-<td align="left">:read-only</td>
-<td align="left">:read-only</td>
-<td align="left">用于匹配设置 “readonly”（只读） 属性的元素</td>
-</tr>
-<tr>
-<td align="left">:optional</td>
-<td align="left">:optional</td>
-<td align="left">用于匹配可选的输入元素</td>
-</tr>
-<tr>
-<td align="left">:required</td>
-<td align="left">:required</td>
-<td align="left">用于匹配设置了 “required” 属性的元素</td>
-</tr>
-<tr>
-<td align="left">:valid</td>
-<td align="left">:valid</td>
-<td align="left">用于匹配输入值为合法的元素</td>
-</tr>
-<tr>
-<td align="left">:invalid</td>
-<td align="left">:invalid</td>
-<td align="left">用于匹配输入值为非法的元素</td>
-</tr>
-</tbody></table>
-</li>
-</ol>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/11/16/CSS-css%E9%80%89%E6%8B%A9%E5%99%A8/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Javascript-二维数组反置" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/11/09/Javascript-%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%E5%8F%8D%E7%BD%AE/">Javascript-二维数组反置</a>
-    </h1>
   
 
-        
-        <a href="/2020/11/09/Javascript-%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%E5%8F%8D%E7%BD%AE/" class="archive-article-date">
-  	<time datetime="2020-11-09T07:41:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-11-09</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="灵感由来"><a href="#灵感由来" class="headerlink" title="灵感由来"></a>灵感由来</h2><p>前两天去一家公司参加初试，这是其中一道笔试题(NxN的二维数组)</p>
-<p>不过由于我的算法基础并不好，这么简单的问题还是花了几分钟的<br>正好今天不知道要做什么，就把这题记录一下 后面一定要找机会学数据结构和算法<br>（当然是在找到实习之后）</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params">arr</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> newArr = [[],[],[]]</span><br><span class="line">    <span class="function"><span class="title">for</span>(<span class="params"><span class="keyword">var</span> i=<span class="number">0</span>; i&lt;arr.length;i++</span>)</span>&#123;</span><br><span class="line">        <span class="function"><span class="title">for</span>(<span class="params"><span class="keyword">var</span> j=<span class="number">0</span>; j&lt;arr.length;j++</span>)</span>&#123;</span><br><span class="line">            newArr[i][j] = arr[j][i]</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> newArr</span><br><span class="line">&#125;</span><br><span class="line">test([[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>],[<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>],[<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>]])</span><br></pre></td></tr></table></figure>
-
-<p>嗯。。。有点蠢看起来，但我确实就是怎么写的。。。。看来我还是有很大的进步空间</p>
-<p>今天也是充满希望的一天呢</p>
-<h3 id="加油！前端人！"><a href="#加油！前端人！" class="headerlink" title="加油！前端人！"></a>加油！前端人！</h3>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/11/09/Javascript-%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%E5%8F%8D%E7%BD%AE/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-我的第一篇博客" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/11/02/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/">我的第一篇博客</a>
-    </h1>
   
 
-        
-        <a href="/2020/11/02/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" class="archive-article-date">
-  	<time datetime="2020-11-02T07:01:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-11-02</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="写在最前面"><a href="#写在最前面" class="headerlink" title="写在最前面"></a>写在最前面</h2><p>创建这个博客的初衷是为了记录一下，平时在学知识的过程中，把一些我认为重要的知识，按我的理解整理起来，方便自己以后<br>回顾(可能也能帮到别人)</p>
-<p>想过手撸博客 然后买个域名挂上去，但是怎么写都不满意，还要考虑响应式的问题，就干脆直接用框架惹（不得不说这个框架还有点好用）</p>
-<p>多的也不说了，就这样！</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">`祝你开心每一天`</span>)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">System.out.print(<span class="string">&#x27;如果你也正在学习&#x27;</span>)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">echo</span> <span class="string">&#x27;愿我们共同进步&#x27;</span>;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/11/02/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
 
 
@@ -684,8 +294,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
